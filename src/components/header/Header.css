@@ -252,6 +252,10 @@
     letter-spacing: 0.6px;
 }
 
+.fs-24 {
+    font-size: 24px;
+}
+
 .header__search-content button:hover {
     color: #fff;
     opacity: 1;
@@ -509,5 +513,20 @@
     }
     .header__dropdown-menu.show {
         margin-top: 0;
+    }
+}
+
+@media (max-width: 476px) {
+    .header__search-content button {
+        width: 60px;
+    }
+    .header__search-content button span {
+        display: none;
+    }
+    .header__search-content button i {
+        display: block!important;
+    }
+    .header__search-content input {
+        padding-right: 100px;
     }
 }

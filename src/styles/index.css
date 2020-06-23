@@ -18,7 +18,6 @@ button {
     -moz-transition: 0.4s ease;
     transition: 0.4s ease;
     cursor: pointer;
-    outline: none;
 }
 
 button:focus {
@@ -56,4 +55,151 @@ input:focus,
 textarea:focus,
 select:focus {
     outline: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ ::-moz-selection {
+    background: #fff;
+    color: #000;
+    text-shadow: none;
+}
+
+ ::selection {
+    background: #fff;
+    color: #000;
+    text-shadow: none;
+}
+
+ ::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+ ::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+ :-moz-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+ :-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+.tab-content>.tab-pane {
+    display: none;
+}
+
+.tab-content>.active {
+    display: block;
+}
+
+.fade {
+    -webkit-transition: opacity 0.25s linear;
+    -moz-transition: opacity 0.25s linear;
+    transition: opacity 0.25s linear;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .fade {
+        -webkit-transition: none;
+        -moz-transition: none;
+        transition: none;
+    }
+}
+
+.fade:not(.show) {
+    opacity: 0;
+}
+
+.collapse:not(.show) {
+    display: none;
+}
+
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height 0.4s ease;
+    -moz-transition: height 0.4s ease;
+    transition: height 0.4s ease;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .collapsing {
+        -webkit-transition: none;
+        -moz-transition: none;
+        transition: none;
+    }
+}
+
+.b-description_readmore_button {
+    cursor: pointer;
+    display: block;
+    height: 24px;
+    width: 100%;
+    position: relative;
+}
+
+.b-description_readmore_button:before {
+    content: '\f1c8';
+    font-family: "Ionicons";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 22px;
+    line-height: 24px;
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    transition: 0.4s ease;
+}
+
+.b-description_readmore_button:hover:before,
+.b-description_readmore_button.b-description_readmore_button_active:before {
+    color: #ff55a5;
+}
+
+.body:before {
+    content: '';
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background-color: rgba(43, 43, 49, 0.75);
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    transition: 0.4s ease;
+}
+
+.body--active:before {
+    z-index: 99;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.m-t-135 {
+    margin-top: 135px!important;
+}
+
+.p-t-20 {
+    padding-top: 20px!important;
 }
