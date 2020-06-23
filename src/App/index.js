@@ -4,7 +4,10 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap-reboot.min.css';
+import 'bootstrap/dist/css/bootstrap-grid.min.css';
+import '../styles/ionicons/css/ionicons.min.css';
+import '../styles/index.css';
 
 const App = () => (
     <Layout>
