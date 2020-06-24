@@ -4,9 +4,11 @@ import {Container, Row} from 'reactstrap';
 import './Home.css';
 
 import Card from '../../components/card/Card';
+import Footer from '../../components/footer/Footer';
 
 export default function Home() {
     return (
+        <>
         <section className="home">
             <Container>
                 <div className="tab-content" id="myTabContent">
@@ -21,5 +23,7 @@ export default function Home() {
                 </div>
             </Container>
         </section>
+        <Footer />
+        </>
     )
 }

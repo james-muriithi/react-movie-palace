@@ -4,41 +4,41 @@ import Img from '../image/Image';
 import {Link} from 'gatsby';
 
 import shareSvg from '../../images/share.svg';
+import Like from '../favourite/Like';
 import './Card.css';
 
 export default function Card() {
     return (
-        <Col xs="6" lg="6" sm="12" >
+        <Col xs="6" lg="6" sm="12" className="movie-card" >
             <div className="card card--list">
                 <Row>
                     <Col sm="4" xs="12">
                         <div className="card__cover">
                             <Img image={{ src: 'https://raw.githubusercontent.com/Aljullu/react-lazy-load-image-component-demo/master/images/01.jpg'}} />
+                            <a href="/" className="card__play">
+                                <i className="icon ion-ios-play"></i>
+                            </a>
+                            <span className="card__rate card__rate--green">7.1</span>
                         </div>
                     </Col>
                     <Col sm="8" xs="12" >
                         <div className="card__content">
-                            <Link to="#" >
+                            <Link to="/" >
                                 <h3 className="card__title">
                                     Movie Name
                                 </h3>
                             </Link>
                             <span className="card__category">
-                                <a href="#">hello</a>
+                                <span>hello, hello, comedy</span>
                             </span>
 
                             <div className="card__wrap">
-                                <span className="card__rate">
-                                    <i className="icon ion-ios-star"></i> 8.5
-                                    <span className="total_votes pl-1">
-                                        <span> / 20 Votes</span>
-                                    </span>
-                                </span>
+                                
                                 <ul className="card__list">
-                                    <li>
-                                        Release Date:
+                                    <li className="d-inline-block" >
+                                        <Like />
                                     </li>
-                                    <li className="grid-share-btn" style={{ borderRadius: '50%', padding: '10px', cursor: 'pointer'}} data-title="" data-url="" data-rating="" data-overview="">
+                                    <li className="grid-share-btn d-inline-block" style={{ borderRadius: '50%', padding: '10px', cursor: 'pointer'}} data-title="" data-url="" data-rating="" data-overview="">
                                         <img src={shareSvg} alt="share"/>
                                     </li>
                                 </ul>
