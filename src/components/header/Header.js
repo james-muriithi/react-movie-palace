@@ -24,6 +24,7 @@ const Header = () => {
             toggleMenu()
         }
         setSearchOpen(open => !open);
+        // $('section.home #myTabContent .row').toggleClass('p-t-50')
     }
 
     return (
