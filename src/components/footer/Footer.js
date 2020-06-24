@@ -14,7 +14,7 @@ export default function Footer() {
             <Container>
                 <Row>
                     <Col xs="6" md="6" lg="3" >
-                        <a href="index.html" class="footer__logo">
+                        <a href="index.html" className="footer__logo">
                             <img src={logo} alt="logo" />
                         </a>
                     </Col>

@@ -12,10 +12,11 @@ const Image = ({ image, scrollPosition }) => (
         className="gallery-img"
         scrollPosition={scrollPosition}
         effect='blur'
-        height={240}
-        width={'100%'}
+        height={image.height ? image.height: 240}
         placeholderSrc={'https://ucarecdn.com/dc3dad83-e7b5-44cd-841a-dbf4000005d6/-/resize/150x200/-/quality/lightest/party.jpg'}
-        src={image.src} />
+        src={image.src}
+        width={image.width ? image.width : 150}
+        wrapperClassName="gallery-img-wrapper" />
 );
 
 Image.defaultProps = {
