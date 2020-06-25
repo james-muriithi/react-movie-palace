@@ -31,6 +31,12 @@ function MovieDetails({movie}) {
         let myArray = []
         palette.map((item, index) => myArray.push(rgba(item, opacities[ index ])))
         setGradientColors(myArray)
+
+        // change meta theme
+        if (colorArrays.length > 0) {
+            const hex = tinycolor(rgb(colorArrays)).darken().toHexString()
+            changeThemeColor(hex);
+        }
     }
 
     function rgb(values) {
@@ -53,10 +59,6 @@ function MovieDetails({movie}) {
             const header = document.querySelector('.movie-header');
             if (globalWindow && globalWindow.pageYOffset > 430 && header) {
                 header.style.background = `${colorArrays.length > 0 ? rgb(colorArrays) : '#2b2b31'}`;
-                if (colorArrays.length > 0) {
-                    const hex = tinycolor(header.style.background).toHexString().darken().toString()
-                    changeThemeColor(hex);
-                }
             } else if (header) {
                 header.style.background = 'transparent';
             }

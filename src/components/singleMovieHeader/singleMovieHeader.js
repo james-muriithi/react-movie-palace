@@ -8,8 +8,6 @@ import './singleMovieHeader.css'
 export default function SingleMovieHeader({changeColor}) {
     const globalWindow = typeof window !== 'undefined' && window;
 
-
-
     useEffect(() => {
         function handleScroll() {
             const header = document.getElementsByClassName('movie-header')[ 0 ]
