@@ -25,8 +25,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Movie Palace`,
+        short_name: `Movie Palace`,
         start_url: `/`,
         background_color: `#28282d`,
         theme_color: `#28282d`,

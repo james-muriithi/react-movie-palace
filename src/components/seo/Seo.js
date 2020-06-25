@@ -170,7 +170,7 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
 }
 
 SEO.defaultProps = {
-  title: `Movie Palace â€“ Online Movies, TV Shows & Cinema`,
+  title: `Movie Palace - Online Movies, TV Shows & Cinema`,
   desc: `Find out the most recent, pouplar movies and TV shows in one place, ratings, release dates, durations, casts.`,
   banner: `/preview.png`,
   pathname: null,

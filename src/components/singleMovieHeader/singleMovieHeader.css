@@ -12,9 +12,9 @@
 }
 
 .movie-header.show__bg {
-    -webkit-transition: background .5s ease;
-    -moz-transition: background .5s ease;
-    transition: background .2s ease;
+    -webkit-transition: background .1s ease;
+    -moz-transition: background .1s ease;
+    transition: background .1s ease;
 }
 
 .movie-header .details__title {

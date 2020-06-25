@@ -6,7 +6,7 @@ import SEO from '../components/seo/Seo';
 export default function Movie() {
     return (
         <>
-            <SEO />
+            <SEO title="Perry Mason - Movie Palace" />
             <SingleMovie />
         </>
     )
