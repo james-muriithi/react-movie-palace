@@ -4,11 +4,17 @@
     height: 80px;
     background: transparent;
     display: block;
-    position: fixed;
+    position: fixed!important;
     top: 0;
     left: 0;
     right: 0;
     z-index: 101;
+}
+
+.movie-header.show__bg {
+    -webkit-transition: background .5s ease;
+    -moz-transition: background .5s ease;
+    transition: background .2s ease;
 }
 
 .movie-header .details__title {

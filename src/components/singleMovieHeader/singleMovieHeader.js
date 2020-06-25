@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react'
 import { Container, Row, Col } from 'reactstrap';
 
-import Like from '../favourite/Like';
 import shareSvg from '../../images/share.svg';
 import './singleMovieHeader.css'
 
@@ -37,7 +36,6 @@ export default function SingleMovieHeader({changeColor}) {
                                 Perry Mason Perry Mason
                             </h1>
                             <div className="ml-auto pt-2">
-                                <Like />
                                 <span className="share-btn d-inline-block" style={{ borderRadius: '50%', padding: '10px', cursor: 'pointer' }} data-title="" data-url="" data-rating="" data-overview="">
                                     <img src={shareSvg} alt="share" />
                                 </span>

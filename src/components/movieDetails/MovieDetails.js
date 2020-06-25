@@ -10,11 +10,12 @@ import Like from '../favourite/Like';
 import './MovieDetails.css'
 
 function MovieDetails({movie}) {
-
+    const globalWindow = typeof window !== 'undefined' && window;
     const [ colorArrays, setColorArrays ] = useState([]);
     const [gradientColors, setGradientColors] = useState([
         'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 0.5)', 'rgba(0, 212, 255, 0)'
-    ])
+    ]);
+    const [height, setHeight] = useState(600);
 
     function getColorArrays() {
         const colorThief = new ColorThief();
@@ -39,28 +40,37 @@ function MovieDetails({movie}) {
         return typeof values === "undefined" ? null : `rgba(${values.join(', ')}, ${opacity})`;
     }
 
-    const globalWindow = typeof window !== 'undefined' && window;
-
     useEffect(() => {
         const handleScroll = () =>{
             const header = document.querySelector('.movie-header');
             if (globalWindow && globalWindow.pageYOffset > 430 && header) {
-                console.log('hey');
                 header.style.background = `${colorArrays.length > 0 ? rgb(colorArrays) : '#2b2b31'}`;
             } else if (header) {
                 header.style.background = 'transparent';
             }
         }
+        const handleResize = () => {
+            setHeight(globalWindow.innerHeight)
+        }
+        
+        handleResize()
+
         globalWindow && globalWindow.addEventListener('scroll', handleScroll)
+        globalWindow && globalWindow.addEventListener('resize', handleResize);
     })
 
     const BgDiv = styled.div`
-        height: ${globalWindow && globalWindow.innerHeight}px;
-        background: linear-gradient(45deg, ${gradientColors[ 0 ]} 10%,${gradientColors[ 0 ]} 30%, ${gradientColors[ 2 ]} 50%), url("https://image.tmdb.org/t/p/original/jGwCKq2EbQbsgNTBM2NoEzFHRdh.jpg") center center / cover no-repeat;`
+        height: ${(props) => props.height}px;
+        background: ${(props) => props.background};`
 
     return (
         <>
-            <BgDiv className="details__bg" data-bg="" ></BgDiv>
+            <BgDiv
+                className="details__bg" 
+                data-bg="" 
+                height={height}
+                background={`linear-gradient(45deg, ${gradientColors[ 0 ]} 10%,${gradientColors[ 0 ]} 30%, ${gradientColors[ 2 ]} 50%), url("https://image.tmdb.org/t/p/original/jGwCKq2EbQbsgNTBM2NoEzFHRdh.jpg") center center / cover no-repeat`}
+             ></BgDiv>
             <Container>
                 <Row>
                     <Col xl="12" >

@@ -14,8 +14,8 @@ export default function Card() {
                 <Row>
                     <Col sm="4" xs="12">
                         <div className="card__cover">
-                            <Img image={{ src: 'https://raw.githubusercontent.com/Aljullu/react-lazy-load-image-component-demo/master/images/01.jpg'}} />
-                            <a href="/" className="card__play">
+                            <Img image={{ src: 'https://image.tmdb.org/t/p/w220_and_h330_face/ggFHVNu6YYI5L9pCfOacjizRGt.jpg'}} />
+                            <a href="/movie" className="card__play">
                                 <i className="icon ion-ios-play"></i>
                             </a>
                             <span className="card__rate card__rate--green">7.1</span>

@@ -6,7 +6,7 @@ import Home from '../containers/home/Home';
 import SEO from "../components/seo"
 import 'bootstrap/dist/css/bootstrap-reboot.min.css';
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
-import '../styles/ionicons/css/ionicons.min.css';
+import 'ionicons-npm/css/ionicons.min.css';
 import '../styles/index.css';
 
 const App = () => (
