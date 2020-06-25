@@ -40,7 +40,7 @@ export default function SingleMovieHeader({changeColor}) {
                 <Col xs="12" className="movie-header">
                     <Container className="h-100">
                         <Row className="align-items-center h-100">
-                            <button className="back text-white">
+                            <button className="back text-white" aria-label="back button">
                                 <i className="icon ion-ios-arrow-back"></i>
                             </button>
 

@@ -23,7 +23,7 @@ export default function Card() {
                     </Col>
                     <Col sm="8" xs="12" >
                         <div className="card__content">
-                            <Link to="/movie" >
+                            <Link to="/movie" className="d-flex align-tems-center" >
                                 <h3 className="card__title">
                                     Movie Name
                                 </h3>
