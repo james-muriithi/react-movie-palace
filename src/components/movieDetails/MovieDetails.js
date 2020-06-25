@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {Container, Row, Col} from 'reactstrap';
 import ColorThief from "colorthief";
 import styled from 'styled-components';
+import tinycolor from 'tinycolor2'
 
 import Img from '../image/Image';
 import shareSvg from '../../images/share.svg';
@@ -39,12 +40,23 @@ function MovieDetails({movie}) {
     function rgba(values, opacity=1) {
         return typeof values === "undefined" ? null : `rgba(${values.join(', ')}, ${opacity})`;
     }
+    
+    function changeThemeColor(color) {
+        var metaThemeColor = document.querySelector("meta[name=theme-color]");
+        if (metaThemeColor) {
+            metaThemeColor.setAttribute("content", color);
+        }
+    }
 
     useEffect(() => {
         const handleScroll = () =>{
             const header = document.querySelector('.movie-header');
             if (globalWindow && globalWindow.pageYOffset > 430 && header) {
                 header.style.background = `${colorArrays.length > 0 ? rgb(colorArrays) : '#2b2b31'}`;
+                if (colorArrays.length > 0) {
+                    const hex = tinycolor(header.style.background).toHexString().darken().toString()
+                    changeThemeColor(hex);
+                }
             } else if (header) {
                 header.style.background = 'transparent';
             }
@@ -54,7 +66,8 @@ function MovieDetails({movie}) {
         }
         
         handleResize()
-
+        handleScroll();
+        
         globalWindow && globalWindow.addEventListener('scroll', handleScroll)
         globalWindow && globalWindow.addEventListener('resize', handleResize);
     })
