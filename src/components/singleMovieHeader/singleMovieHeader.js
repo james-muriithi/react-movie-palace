@@ -1,20 +1,48 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Container, Row, Col } from 'reactstrap';
 
 import Like from '../favourite/Like';
+import shareSvg from '../../images/share.svg';
 import './singleMovieHeader.css'
 
-export default function singleMovieHeader() {
+export default function SingleMovieHeader({changeColor}) {
+    useEffect(() => {
+        function handleScroll() {
+            const header = document.getElementsByClassName('movie-header')[ 0 ]
+            const title = header && header.getElementsByClassName('details__title')[ 0 ];
+
+
+            if (title && window.pageYOffset > 430) {
+                title.classList.remove('d-none')
+                header.classList.add('show__bg')
+            }else if(title){
+                title.classList.add('d-none')
+                header.classList.remove('show__bg')
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+    })
+
     return (
         <Container>
             <Row>
                 <Col xs="12" className="movie-header">
-                    <button className="back">
-                        <i className="icon ion-ios-arrow-back"></i>
-                    </button>
-                    <div className="ml-auto">
-                        <Like />
-                    </div>
+                    <Container>
+                        <Row>
+                            <button className="back">
+                                <i className="icon ion-ios-arrow-back"></i>
+                            </button>
+                            <h1 className="details__title pt-3 pl-3 d-none">
+                                Perry Mason Perry Mason
+                            </h1>
+                            <div className="ml-auto pt-2">
+                                <Like />
+                                <span className="share-btn d-inline-block" style={{ borderRadius: '50%', padding: '10px', cursor: 'pointer' }} data-title="" data-url="" data-rating="" data-overview="">
+                                    <img src={shareSvg} alt="share" />
+                                </span>
+                            </div>
+                        </Row>
+                    </Container>
                 </Col>
             </Row>
         </Container>

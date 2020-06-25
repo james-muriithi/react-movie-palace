@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import {Container, Row, Col} from 'reactstrap';
+import ColorThief from "colorthief";
+import styled from 'styled-components';
 
 import Img from '../image/Image';
 import shareSvg from '../../images/share.svg';
@@ -8,17 +10,65 @@ import Like from '../favourite/Like';
 import './MovieDetails.css'
 
 function MovieDetails({movie}) {
+
+    const [ colorArrays, setColorArrays ] = useState([]);
+    const [gradientColors, setGradientColors] = useState([
+        'rgba(0, 0, 0, 1)', 'rgba(0, 0, 0, 0.5)', 'rgba(0, 212, 255, 0)'
+    ])
+
+    function getColorArrays() {
+        const colorThief = new ColorThief();
+        const img = new Image();
+
+        img.crossOrigin = 'Anonymous';
+        img.src = 'https://image.tmdb.org/t/p/w220_and_h330_face/ggFHVNu6YYI5L9pCfOacjizRGt.jpg'
+
+        setColorArrays(colorThief.getColor(img));
+        const palette = colorThief.getPalette(img, 3)
+        const opacities = [ '1', '0.5', '0' ]
+        let myArray = []
+        palette.map((item, index) => myArray.push(rgba(item, opacities[ index ])))
+        setGradientColors(myArray)
+    }
+
+    function rgb(values) {
+        return typeof values === "undefined" ? null : "rgb(" + values.join(', ') + ")";
+    }
+
+    function rgba(values, opacity=1) {
+        return typeof values === "undefined" ? null : `rgba(${values.join(', ')}, ${opacity})`;
+    }
+
+    useEffect(() => {
+        const handleScroll = () =>{
+            const header = document.querySelector('.movie-header');
+            if (window.pageYOffset > 430 && header) {
+                console.log('hey');
+                header.style.background = `${colorArrays.length > 0 ? rgb(colorArrays) : '#2b2b31'}`;
+            } else if (header) {
+                header.style.background = 'transparent';
+            }
+        }
+        window.addEventListener('scroll', handleScroll)
+    })
+
+    const BgDiv = styled.div`
+        height: ${window.innerHeight}px;
+        background: linear-gradient(45deg, ${gradientColors[ 0 ]} 10%,${gradientColors[ 0 ]} 30%, ${gradientColors[ 2 ]} 50%), url("https://image.tmdb.org/t/p/original/jGwCKq2EbQbsgNTBM2NoEzFHRdh.jpg") center center / cover no-repeat;`
+
     return (
         <>
-            <div className="details__bg" data-bg="" style={{ height: window.innerHeight}}></div>
+            <BgDiv className="details__bg" data-bg="" ></BgDiv>
             <Container>
                 <Row>
                     <Col xl="12" >
                         <div className="card card--details card--series">
                             <Row>
                                 <Col xs="12" sm="4" lg="3" >
-                                    <div className="card__cover my-card">
-                                        <Img image={{width: '100%', height: '100%', src: 'https://image.tmdb.org/t/p/w300/gPBf35AqvXHvKEpDHaQ4D9xXxeX.jpg' }} />
+                                    <div className="card__cover my-card" onLoad={() => getColorArrays()} >
+                                        <Img
+                                            crossOrigin="anonymous"
+                                            image={{ width: '100%', height: '100%', src: 'https://image.tmdb.org/t/p/w220_and_h330_face/ggFHVNu6YYI5L9pCfOacjizRGt.jpg' }} />
                                         <span className="card__rate card__rate--green">7.1</span>
                                     </div>
                                 </Col>
@@ -33,10 +83,10 @@ function MovieDetails({movie}) {
                                             <ul className="card__list single">
                                                 <li>HD</li>
                                                 <li>18+</li>
-                                                <li className="d-inline-block like" >
+                                                <li className="d-none d-md-block like" >
                                                     <Like />
                                                 </li>
-                                                <li className="share-btn d-inline-block" style={{ borderRadius: '50%', padding: '10px', cursor: 'pointer' }} data-title="" data-url="" data-rating="" data-overview="">
+                                                <li className="share-btn d-none d-md-block" style={{ borderRadius: '50%', padding: '10px', cursor: 'pointer' }} data-title="" data-url="" data-rating="" data-overview="">
                                                     <img src={shareSvg} alt="share" />
                                                 </li>
                                             </ul>

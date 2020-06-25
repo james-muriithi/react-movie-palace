@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-const Image = ({ image, scrollPosition }) => (
+const Image = ({ image, scrollPosition, ...props }) => (
     <LazyLoadImage
+        {...props}
         alt={image.src}
         afterLoad={() => console.log('afterLoadText')}
         beforeLoad={() => console.log('beforeLoadText')}

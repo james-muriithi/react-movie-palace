@@ -11,6 +11,14 @@
     z-index: 101;
 }
 
+.movie-header .details__title {
+    max-width: 210px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 24px;
+}
+
 .movie-header .back {
     margin-top: 15px;
     width: 30px;

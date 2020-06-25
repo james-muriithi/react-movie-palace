@@ -9,12 +9,11 @@ export default function SingleMovie() {
     const [small, setSmall] = useState(window.innerWidth <= 576)
     useEffect(() => {
         function handleResize() {
-            setSmall(() => {
-                if (window.innerWidth > 576 ) {
-                    return false;
-                }
-                return true;
-            })
+            if (window.innerWidth > 576 ) {
+                setSmall(() => false)
+            }else{
+                setSmall(() => true)
+            }
         }
         window.addEventListener('resize', handleResize);
     })
