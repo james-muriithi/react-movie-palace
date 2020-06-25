@@ -31,12 +31,6 @@ function MovieDetails({movie}) {
         let myArray = []
         palette.map((item, index) => myArray.push(rgba(item, opacities[ index ])))
         setGradientColors(myArray)
-
-        // change meta theme
-        if (colorArrays.length > 0) {
-            const hex = tinycolor(rgb(colorArrays)).darken().toHexString()
-            changeThemeColor(hex);
-        }
     }
 
     function rgb(values) {
@@ -55,6 +49,14 @@ function MovieDetails({movie}) {
     }
 
     useEffect(() => {
+
+        // change meta theme
+        if (colorArrays.length > 0) {
+            const hex = tinycolor(rgb(colorArrays)).darken().toHexString();
+            console.log(hex);
+            changeThemeColor(hex);
+        }
+        
         const handleScroll = () =>{
             const header = document.querySelector('.movie-header');
             if (globalWindow && globalWindow.pageYOffset > 430 && header) {
