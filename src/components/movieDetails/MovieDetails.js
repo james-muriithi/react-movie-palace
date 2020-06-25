@@ -39,21 +39,23 @@ function MovieDetails({movie}) {
         return typeof values === "undefined" ? null : `rgba(${values.join(', ')}, ${opacity})`;
     }
 
+    const globalWindow = typeof window !== 'undefined' && window;
+
     useEffect(() => {
         const handleScroll = () =>{
             const header = document.querySelector('.movie-header');
-            if (window.pageYOffset > 430 && header) {
+            if (globalWindow && globalWindow.pageYOffset > 430 && header) {
                 console.log('hey');
                 header.style.background = `${colorArrays.length > 0 ? rgb(colorArrays) : '#2b2b31'}`;
             } else if (header) {
                 header.style.background = 'transparent';
             }
         }
-        window.addEventListener('scroll', handleScroll)
+        globalWindow && globalWindow.addEventListener('scroll', handleScroll)
     })
 
     const BgDiv = styled.div`
-        height: ${window.innerHeight}px;
+        height: ${globalWindow && globalWindow.innerHeight}px;
         background: linear-gradient(45deg, ${gradientColors[ 0 ]} 10%,${gradientColors[ 0 ]} 30%, ${gradientColors[ 2 ]} 50%), url("https://image.tmdb.org/t/p/original/jGwCKq2EbQbsgNTBM2NoEzFHRdh.jpg") center center / cover no-repeat;`
 
     return (

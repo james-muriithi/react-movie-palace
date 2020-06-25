@@ -6,16 +6,17 @@ import BigHeader from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 
 export default function SingleMovie() {
-    const [small, setSmall] = useState(window.innerWidth <= 576)
+    const globalWindow = typeof window !== 'undefined' && window;
+    const [small, setSmall] = useState(globalWindow ? globalWindow.innerWidth <= 576 : false)
     useEffect(() => {
         function handleResize() {
-            if (window.innerWidth > 576 ) {
+            if (globalWindow && globalWindow.innerWidth > 576 ) {
                 setSmall(() => false)
             }else{
                 setSmall(() => true)
             }
         }
-        window.addEventListener('resize', handleResize);
+        globalWindow && globalWindow.addEventListener('resize', handleResize);
     })
     return (
         <>

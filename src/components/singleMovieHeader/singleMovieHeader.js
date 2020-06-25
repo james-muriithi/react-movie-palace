@@ -6,13 +6,14 @@ import shareSvg from '../../images/share.svg';
 import './singleMovieHeader.css'
 
 export default function SingleMovieHeader({changeColor}) {
+    const globalWindow = typeof window !== 'undefined' && window;
     useEffect(() => {
         function handleScroll() {
             const header = document.getElementsByClassName('movie-header')[ 0 ]
             const title = header && header.getElementsByClassName('details__title')[ 0 ];
 
 
-            if (title && window.pageYOffset > 430) {
+            if (title && globalWindow.pageYOffset > 430) {
                 title.classList.remove('d-none')
                 header.classList.add('show__bg')
             }else if(title){
@@ -20,7 +21,7 @@ export default function SingleMovieHeader({changeColor}) {
                 header.classList.remove('show__bg')
             }
         }
-        window.addEventListener('scroll', handleScroll);
+        globalWindow.addEventListener('scroll', handleScroll);
     })
 
     return (
