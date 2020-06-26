@@ -28,8 +28,8 @@ export default function SingleMovie() {
             <section className="section details">
                 <MovieDetails />
                 <Container>
-                    <Recommendation />
                     <Row>
+                        <Recommendation />
                         <Cast />
                         <Trailer />
                     </Row>
