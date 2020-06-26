@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-const Image = ({ image, scrollPosition, ...props }) => (
+const Image = ({ image, scrollPosition, ...props }) => {
+    console.log(image);
+    return(
     <LazyLoadImage
         {...props}
         alt={image.src}
@@ -16,9 +18,9 @@ const Image = ({ image, scrollPosition, ...props }) => (
         height={image.height ? image.height: 240}
         placeholderSrc={'https://res.cloudinary.com/james-m/image/upload/c_thumb,h_240,w_180/v1593129344/party_va3kjs.jpg'}
         src={image.src}
-        width={image.width ? image.width : 150}
+        width={image.width}
         wrapperClassName="gallery-img-wrapper" />
-);
+)};
 
 Image.defaultProps = {
     image : {

@@ -91,7 +91,7 @@ function MovieDetails({movie}) {
             <Container>
                 <Row>
                     <Col xl="12" >
-                        <div className="card card--details card--series">
+                        <div className="card card--details card--series" style={{minHeight:height}} >
                             <Row>
                                 <Col xs="12" sm="4" lg="3" >
                                     <div className="card__cover my-card" onLoad={() => getColorArrays()} >

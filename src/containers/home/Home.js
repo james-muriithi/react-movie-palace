@@ -14,10 +14,10 @@ export default function Home() {
                 <div className="tab-content" id="myTabContent">
                     <div className="tab-pane fade show active">
                         <Row>
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
+                            <Card className="movie-card" />
+                            <Card className="movie-card" />
+                            <Card className="movie-card" />
+                            <Card className="movie-card" />
                         </Row>
                     </div>
                 </div>

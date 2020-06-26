@@ -8,9 +8,9 @@ import shareSvg from '../../images/share.svg';
 import Like from '../favourite/Like';
 import './Card.css';
 
-export default function Card() {
+export default function Card(props) {
     return (
-        <Col xs="6" lg="6" sm="12" className="movie-card" >
+        <Col xs="6" lg="6" sm="12" {...props} >
             <Fade bottom duration={800} distance="20px">
             <div className="card card--list">
                 <Row>
