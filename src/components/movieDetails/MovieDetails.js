@@ -82,13 +82,13 @@ function MovieDetails({movie}) {
 
     return (
         <>
-            <Container>
                 <BgDiv
                     className="details__bg"
                     data-bg=""
                     height={height}
                     background={`linear-gradient(45deg, ${gradientColors[ 0 ]} 10%,${gradientColors[ 0 ]} 30%, ${gradientColors[ 2 ]} 50%), url("https://image.tmdb.org/t/p/original/jGwCKq2EbQbsgNTBM2NoEzFHRdh.jpg") center center / cover no-repeat`}
                 ></BgDiv>
+            <Container>
                 <Row>
                     <Col xl="12" >
                         <div className="card card--details card--series" style={{ minHeight: height }} >
