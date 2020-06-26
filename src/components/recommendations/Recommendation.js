@@ -22,6 +22,7 @@ export default function Recommendation() {
                 loop={false}
                 margin={10}
                 nav={true}
+                dots={false}
                 responsive= {{
                 0: {
                 items: 2

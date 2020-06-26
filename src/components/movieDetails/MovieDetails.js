@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
-import {Container, Row, Col} from 'reactstrap';
+import { Row, Col} from 'reactstrap';
 import ColorThief from "colorthief";
 import styled from 'styled-components';
 import tinycolor from 'tinycolor2'
@@ -88,7 +88,6 @@ function MovieDetails({movie}) {
                 height={height}
                 background={`linear-gradient(45deg, ${gradientColors[ 0 ]} 10%,${gradientColors[ 0 ]} 30%, ${gradientColors[ 2 ]} 50%), url("https://image.tmdb.org/t/p/original/jGwCKq2EbQbsgNTBM2NoEzFHRdh.jpg") center center / cover no-repeat`}
              ></BgDiv>
-            <Container>
                 <Row>
                     <Col xl="12" >
                         <div className="card card--details card--series" style={{minHeight:height}} >
@@ -144,7 +143,6 @@ function MovieDetails({movie}) {
                         </div>
                     </Col>
                 </Row>
-            </Container>
         </>
     )
 }

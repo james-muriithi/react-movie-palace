@@ -1,3 +1,9 @@
-.card__cover img {
+.item .card__cover img {
     border-radius: 0px;
+}
+
+.item .card__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
