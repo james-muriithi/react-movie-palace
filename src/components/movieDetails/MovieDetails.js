@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
-import { Row, Col} from 'reactstrap';
+import { Row, Col, Container} from 'reactstrap';
 import ColorThief from "colorthief";
 import styled from 'styled-components';
 import tinycolor from 'tinycolor2'
@@ -82,15 +82,16 @@ function MovieDetails({movie}) {
 
     return (
         <>
-            <BgDiv
-                className="details__bg" 
-                data-bg="" 
-                height={height}
-                background={`linear-gradient(45deg, ${gradientColors[ 0 ]} 10%,${gradientColors[ 0 ]} 30%, ${gradientColors[ 2 ]} 50%), url("https://image.tmdb.org/t/p/original/jGwCKq2EbQbsgNTBM2NoEzFHRdh.jpg") center center / cover no-repeat`}
-             ></BgDiv>
+            <Container>
+                <BgDiv
+                    className="details__bg"
+                    data-bg=""
+                    height={height}
+                    background={`linear-gradient(45deg, ${gradientColors[ 0 ]} 10%,${gradientColors[ 0 ]} 30%, ${gradientColors[ 2 ]} 50%), url("https://image.tmdb.org/t/p/original/jGwCKq2EbQbsgNTBM2NoEzFHRdh.jpg") center center / cover no-repeat`}
+                ></BgDiv>
                 <Row>
                     <Col xl="12" >
-                        <div className="card card--details card--series" style={{minHeight:height}} >
+                        <div className="card card--details card--series" style={{ minHeight: height }} >
                             <Row>
                                 <Col xs="12" sm="4" lg="3" >
                                     <div className="card__cover my-card" onLoad={() => getColorArrays()} >
@@ -143,6 +144,7 @@ function MovieDetails({movie}) {
                         </div>
                     </Col>
                 </Row>
+            </Container>
         </>
     )
 }

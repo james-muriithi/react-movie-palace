@@ -14,7 +14,7 @@ export default function Trailer() {
                 <Row className="h-100">
                     <Col xs="12" className="h-100">
                         <div className="card h-80 xs-h-100">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%- data.videos.results[0].key %> " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe title="Youtube Trailer" width="560" height="315" src="https://www.youtube.com/embed/<%- data.videos.results[0].key %> " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </Col>
                 </Row>

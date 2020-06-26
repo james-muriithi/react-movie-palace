@@ -39,7 +39,7 @@ export default function SingleMovieHeader({changeColor}) {
         if (globalWindow.history.length > 1) {
             globalWindow.history.back()
         }else{
-            window.location.href = '/'
+            globalWindow.location.href = '/'
         }
     }
 

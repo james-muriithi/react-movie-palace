@@ -26,14 +26,12 @@ export default function SingleMovie() {
         <>
             {small ? <Header /> : <BigHeader /> }
             <section className="section details">
-                <Container>
-                    <MovieDetails />
+                <MovieDetails />
                     <Recommendation />
                     <Row>
                         <Cast />
                         <Trailer />
                     </Row>
-                </Container>
             </section>
             <Footer />
         </>

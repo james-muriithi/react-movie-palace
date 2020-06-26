@@ -1,6 +1,8 @@
 import React from 'react'
 import { Col } from 'reactstrap'
+import Loadable from '@loadable/component';
 import OwlCarousel from 'react-owl-carousel'
+
 import CastCard from './CastCard'
 
 export default function Cast() {
