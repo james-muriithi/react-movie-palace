@@ -34,13 +34,24 @@ export default function SingleMovieHeader({changeColor}) {
         globalWindow.addEventListener('scroll', handleScroll);
     })
 
+    const goBack = () =>{
+        console.log(globalWindow.history.length);
+        if (globalWindow.history.length > 1) {
+            globalWindow.history.back()
+        }else{
+            window.location.href = '/'
+        }
+    }
+
     return (
         <Container>
             <Row>
                 <Col xs="12" className="movie-header">
                     <Container className="h-100">
                         <Row className="align-items-center h-100">
-                            <button className="back text-white" aria-label="back button">
+                            <button className="back text-white" aria-label="back button" onClick={()=>{
+                                goBack()
+                            }} >
                                 <i className="icon ion-ios-arrow-back"></i>
                             </button>
 

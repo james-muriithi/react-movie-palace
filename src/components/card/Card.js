@@ -14,8 +14,8 @@ export default function Card() {
                 <Row>
                     <Col sm="4" xs="12">
                         <div className="card__cover">
-                            <Img image={{ src: 'https://image.tmdb.org/t/p/w220_and_h330_face/ggFHVNu6YYI5L9pCfOacjizRGt.jpg'}} />
-                            <Link to="/movie" className="card__play">
+                            <Img image={{ src: 'https://image.tmdb.org/t/p/w200/ggFHVNu6YYI5L9pCfOacjizRGt.jpg'}} />
+                            <Link to="/movie" className="card__play" aria-label="check movie">
                                 <i className="icon ion-ios-play"></i>
                             </Link>
                             <span className="card__rate card__rate--green">7.1</span>
@@ -23,7 +23,7 @@ export default function Card() {
                     </Col>
                     <Col sm="8" xs="12" >
                         <div className="card__content">
-                            <Link to="/movie" className="d-flex align-tems-center" >
+                            <Link to="/movie" className="d-flex align-items-center" >
                                 <h3 className="card__title">
                                     Movie Name
                                 </h3>

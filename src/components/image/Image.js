@@ -14,7 +14,7 @@ const Image = ({ image, scrollPosition, ...props }) => (
         scrollPosition={scrollPosition}
         effect='blur'
         height={image.height ? image.height: 240}
-        placeholderSrc={'https://ucarecdn.com/dc3dad83-e7b5-44cd-841a-dbf4000005d6/-/resize/150x200/-/quality/lightest/party.jpg'}
+        placeholderSrc={'https://res.cloudinary.com/james-m/image/upload/c_thumb,h_240,w_180/v1593129344/party_va3kjs.jpg'}
         src={image.src}
         width={image.width ? image.width : 150}
         wrapperClassName="gallery-img-wrapper" />

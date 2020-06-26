@@ -112,10 +112,10 @@ function MovieDetails({movie}) {
                                             <ul className="card__list single">
                                                 <li>HD</li>
                                                 <li>18+</li>
-                                                <li className="d-none d-md-block like" >
+                                                <li className="like" >
                                                     <Like />
                                                 </li>
-                                                <li className="share-btn d-none d-md-block" style={{ borderRadius: '50%', padding: '10px', cursor: 'pointer' }} data-title="" data-url="" data-rating="" data-overview="">
+                                                <li className="share-btn" style={{ borderRadius: '50%', padding: '10px', cursor: 'pointer' }} data-title="" data-url="" data-rating="" data-overview="">
                                                     <img src={shareSvg} alt="share" />
                                                 </li>
                                             </ul>
