@@ -6,7 +6,8 @@ import BigHeader from '../../components/header/Header';
 import Recommendation from '../../components/recommendations/Recommendation';
 import Footer from '../../components/footer/Footer';
 import Cast from '../../components/cast/Cast';
-import { Container } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
+import Trailer from '../../components/trailer/Trailer';
 
 export default function SingleMovie() {
     const globalWindow = typeof window !== 'undefined' && window;
@@ -28,7 +29,10 @@ export default function SingleMovie() {
                 <Container>
                     <MovieDetails />
                     <Recommendation />
-                    <Cast />
+                    <Row>
+                        <Cast />
+                        <Trailer />
+                    </Row>
                 </Container>
             </section>
             <Footer />
