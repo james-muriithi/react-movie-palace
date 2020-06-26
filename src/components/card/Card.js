@@ -2,6 +2,7 @@ import React from 'react'
 import {Col, Row} from 'reactstrap';
 import Img from '../image/Image';
 import {Link} from 'gatsby';
+import { Fade } from "react-reveal";
 
 import shareSvg from '../../images/share.svg';
 import Like from '../favourite/Like';
@@ -10,6 +11,7 @@ import './Card.css';
 export default function Card() {
     return (
         <Col xs="6" lg="6" sm="12" className="movie-card" >
+            <Fade bottom duration={800} distance="20px">
             <div className="card card--list">
                 <Row>
                     <Col sm="4" xs="12">
@@ -55,6 +57,7 @@ export default function Card() {
                     </Col>
                 </Row>
             </div>
+            </Fade>
         </Col>
     )
 }
