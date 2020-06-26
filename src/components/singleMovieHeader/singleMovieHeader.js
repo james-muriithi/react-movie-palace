@@ -55,8 +55,8 @@ export default function SingleMovieHeader({changeColor}) {
                                 <i className="icon ion-ios-arrow-back"></i>
                             </button>
 
-                            <h1 className="details__title pt-3 pl-3 d-none">
-                                Perry Mason Perry Mason
+                            <h1 className="details__title d-none mb-0 pl-3">
+                                Perry Mason Perry Mason gfnhhhyhty
                             </h1>
                             
                             {/* <div className="ml-auto pt-2">

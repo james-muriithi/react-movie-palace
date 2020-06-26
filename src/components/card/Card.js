@@ -26,7 +26,7 @@ export default function Card() {
                     <Col sm="8" xs="12" >
                         <div className="card__content">
                             <Link to="/movie" className="d-flex align-items-center" >
-                                <h3 className="card__title">
+                                <h3 className="card__title"> 
                                     Movie Name
                                 </h3>
                             </Link>

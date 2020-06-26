@@ -21,18 +21,12 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .movie-header .back {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-size: 25px;
-    padding-right: 3px;
 }
 
 .h-100 {
@@ -45,4 +39,10 @@
 
 .text-black {
     color: rgb(37, 36, 36)!important;
+}
+
+@media all and (max-width: 576px) {
+    .movie-header .details__title {
+        max-width: 295px;
+    }
 }

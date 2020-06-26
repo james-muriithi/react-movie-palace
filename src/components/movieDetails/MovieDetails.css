@@ -132,21 +132,6 @@
 }
 
 @media (min-width: 576px) {
-    .card--list .card__content {
-        margin-top: 0;
-        height: 212px;
-        overflow: hidden;
-        position: relative;
-    }
-    .card--list .card__title {
-        font-size: 20px;
-        line-height: 24px;
-        margin-bottom: 5px;
-        margin-top: -4px;
-    }
-    .card--list .card__rate {
-        margin-top: 0;
-    }
     .card--details .card__content {
         margin-top: 0;
     }

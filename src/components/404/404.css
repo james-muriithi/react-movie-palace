@@ -63,11 +63,6 @@ body {
     text-shadow: 0 12px 64px rgba(255, 88, 96, 0.35);
 }
 
-.page--404__image img {
-    width: 150px;
-    height: 140px;
-}
-
 .page-404__text {
     text-align: center;
     display: block;
