@@ -16,7 +16,7 @@ export default function Card() {
                 <Row>
                     <Col sm="4" xs="12">
                         <div className="card__cover">
-                            <Img image={{ src: 'https://image.tmdb.org/t/p/w200/ggFHVNu6YYI5L9pCfOacjizRGt.jpg'}} />
+                            <Img width="100%" image={{ src: 'https://image.tmdb.org/t/p/w200/ggFHVNu6YYI5L9pCfOacjizRGt.jpg'}} />
                             <Link to="/movie" className="card__play" aria-label="check movie">
                                 <i className="icon ion-ios-play"></i>
                             </Link>

@@ -21,18 +21,18 @@ export default function Footer() {
                     <Col xs="6" md="6" lg="3" >
                         <ul className="footer__social">
                             <li className="facebook">
-                                <a href="https://facebook.com" rel="noopener  noreferrer" target="_blank" aria-label="facebook icon">
-                                    <i className="icon ion-logo-facebook"></i>
+                                <a href="https://www.facebook.com/mureiithi.james" rel="noopener  noreferrer" target="_blank" aria-label="facebook icon">
+                                    <i className="icon ion-social-facebook"></i>
                                 </a>
                             </li>
                             <li className="instagram">
-                                <a href="https://facebook.com" rel="noopener noreferrer" target="_blank" aria-label="instagram icom">
-                                    <i className="icon ion-logo-instagram"></i>
+                                <a href="https://twitter.com/jam_es_muriithi" rel="noopener noreferrer" target="_blank" aria-label="instagram icom">
+                                    <i className="icon ion-social-instagram"></i>
                                 </a>
                             </li>
                             <li className="twitter">
                                 <a href="https://facebook.com" rel="noopener noreferrer" target="_blank" aria-label="twiter icon">
-                                    <i className="icon ion-logo-twitter"></i>
+                                    <i className="icon ion-social-twitter"></i>
                                 </a>
                             </li>
                         </ul>
@@ -49,7 +49,7 @@ export default function Footer() {
                     </Col>
                     <Col xs="7" md="7" lg="3" className="text-right center" >
                         <span className="footer__credits">
-                            © {getYear()} HotFlix<br /> Created by
+                            © {getYear()} Movie Palace <br /> Created by
                             <a href="https://themeforest.net/user/dmitryvolkov/portfolio?ref=DmitryVolkov" rel="noopener noreferrer" aria-label="owner portfolio" target="_blank">
                                 james muriithi
                             </a>

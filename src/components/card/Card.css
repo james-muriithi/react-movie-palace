@@ -392,6 +392,9 @@
 }
 
 @media screen and (max-width: 576px) {
+    .card__cover {
+        width: 150px;
+    }
     .movie-card:nth-child(odd) {
         padding-right: 0px;
         padding-left: 10px;
