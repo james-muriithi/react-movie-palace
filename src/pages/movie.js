@@ -14,7 +14,9 @@ export default function Movie(props) {
         if (movieId) {
             return movieId;
         }
-        globalWindow.location.href = '/';
+        if (globalWindow.location) {
+            globalWindow.location.href = '/';
+        }
     }
     
     return (

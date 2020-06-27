@@ -42,7 +42,7 @@ export default function Card({movie, ...props}) {
                             </Link>
                             <span className="card__category">
                                 <span>
-                                    {movie.genre_ids.join(', ')}
+                                        {movie.genre_ids && movie.genre_ids.join(', ')}
                                 </span>
                             </span>
 

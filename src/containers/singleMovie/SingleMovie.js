@@ -21,7 +21,7 @@ export default function SingleMovie(props) {
     useEffect(() => {
 
         const fetchMovieData = () => {
-            axios.get(`http://localhost:5000/movie/${props.movieId}`)
+            axios.get(`https://movie-palace-api.herokuapp.com/movie/${props.movieId}`)
                 .then(data => {
                     setMovieData(data.data);
                     setLoaded(true);
@@ -41,14 +41,14 @@ export default function SingleMovie(props) {
     }, [ props.movieId, globalWindow])
     return (
         <>
-            {small ? <Header /> : <BigHeader /> }
+            {small ? <Header title={isLoaded && movieData.data.title}  /> : <BigHeader /> }
             <section className="section details">
-                <MovieDetails movie={movieData} />
+                {isLoaded && <MovieDetails movie={movieData.data} />}
                 <Container>
                     <Row>
-                        <Recommendation />
-                        <Cast />
-                        <Trailer />
+                        {<Recommendation recommendations={movieData.recommendations} />}
+                        {isLoaded && <Cast />}
+                        {isLoaded && <Trailer video={movieData.data.videos.results[0]} />}
                     </Row>
                 </Container>
             </section>

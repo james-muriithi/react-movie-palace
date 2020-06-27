@@ -1,12 +1,13 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Container, Row, Col } from 'reactstrap';
 import tinycolor from 'tinycolor2';
 
 // import shareSvg from '../../images/share.svg';
 import './singleMovieHeader.css'
 
-export default function SingleMovieHeader({changeColor}) {
+export default function SingleMovieHeader({changeColor,...props}) {
     const globalWindow = typeof window !== 'undefined' && window;
+    const [title, setTitle] = useState('')
 
     useEffect(() => {
         function handleScroll() {
@@ -32,7 +33,10 @@ export default function SingleMovieHeader({changeColor}) {
         }
         handleScroll();
         globalWindow.addEventListener('scroll', handleScroll);
-    })
+        if (props.title) {
+            setTitle(props.title)
+        }
+    },[props.title, globalWindow])
 
     const goBack = () =>{
         console.log(globalWindow.history.length);
@@ -56,7 +60,7 @@ export default function SingleMovieHeader({changeColor}) {
                             </button>
 
                             <h1 className="details__title d-none mb-0 pl-3">
-                                Perry Mason Perry Mason gfnhhhyhty
+                                {title}
                             </h1>
                             
                             {/* <div className="ml-auto pt-2">

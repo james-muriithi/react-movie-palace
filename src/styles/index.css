@@ -8,6 +8,7 @@ body {
     background-color: #1a191f;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 button {

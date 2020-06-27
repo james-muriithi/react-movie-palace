@@ -8,6 +8,7 @@ import tinycolor from 'tinycolor2'
 import Img from '../image/Image';
 import shareSvg from '../../images/share.svg';
 import Like from '../favourite/Like';
+import placeholderSrc from '../../images/posterplaceholder_gm4xhm.jpg';
 import './MovieDetails.css'
 
 function MovieDetails({movie}) {
@@ -18,12 +19,18 @@ function MovieDetails({movie}) {
     ]);
     const [height, setHeight] = useState(600);
 
+    const ImageEndpoint = 'https://image.tmdb.org/t/p/w200';
+    const backdropEndpoint = 'https://image.tmdb.org/t/p/original'
+
+    const imageSrc = movie.poster_path ? `${ImageEndpoint}${movie.poster_path}` : placeholderSrc
+    const backdropSrc = `${backdropEndpoint}${movie.backdrop_path}`
+
     function getColorArrays() {
         const colorThief = new ColorThief();
         const img = new Image();
 
         img.crossOrigin = 'Anonymous';
-        img.src = 'https://image.tmdb.org/t/p/w220_and_h330_face/ggFHVNu6YYI5L9pCfOacjizRGt.jpg'
+        img.src = imageSrc
 
         setColorArrays(colorThief.getColor(img));
         const palette = colorThief.getPalette(img, 3)
@@ -80,13 +87,15 @@ function MovieDetails({movie}) {
         height: ${(props) => props.height}px;
         background: ${(props) => props.background};`
 
+        console.log(movie);
+
     return (
         <>
                 <BgDiv
                     className="details__bg"
                     data-bg=""
                     height={height}
-                    background={`linear-gradient(45deg, ${gradientColors[ 0 ]} 10%,${gradientColors[ 0 ]} 30%, ${gradientColors[ 2 ]} 50%), url("https://image.tmdb.org/t/p/original/jGwCKq2EbQbsgNTBM2NoEzFHRdh.jpg") center center / cover no-repeat`}
+                    background={`linear-gradient(to right top, ${gradientColors[ 0 ]} 10%,${gradientColors[ 0 ]} 30%, ${gradientColors[ 2 ]} 50%), url("${backdropSrc}") center center / cover no-repeat`}
                 ></BgDiv>
             <Container>
                 <Row>
@@ -97,21 +106,21 @@ function MovieDetails({movie}) {
                                     <div className="card__cover my-card" onLoad={() => getColorArrays()} >
                                         <Img
                                             crossOrigin="anonymous"
-                                            image={{ width: '100%', height: '100%', src: 'https://image.tmdb.org/t/p/w220_and_h330_face/ggFHVNu6YYI5L9pCfOacjizRGt.jpg' }} />
-                                        <span className="card__rate card__rate--green">7.1</span>
+                                            image={{ width: '100%', height: '100%', src: imageSrc }} />
+                                        <span className="card__rate card__rate--green">{movie.vote_average}</span>
                                     </div>
                                 </Col>
                                 <Col xs="12" sm="8" lg="9">
                                     <div className="card__content my-card">
                                         <Col cs="12" className="p-l-0">
                                             <h1 className="details__title">
-                                                Perry Mason
+                                                {movie.title}
                                             </h1>
                                         </Col>
                                         <div className="card__wrap">
                                             <ul className="card__list single">
                                                 <li>HD</li>
-                                                <li>18+</li>
+                                                {movie.adult && <li>18+</li>}
                                                 <li className="like" >
                                                     <Like />
                                                 </li>
@@ -123,20 +132,21 @@ function MovieDetails({movie}) {
                                         <ul className="card__meta">
                                             <li className="genre">
                                                 <span>Genre:</span>
-                                                comedy, drama, horror
+                                                {movie.genres.join(', ')}
                                             </li>
-                                            <li><span>Release date:</span>
+                                            <li>
+                                                <span>Release date: {movie.release_date}</span>
                                             </li>
-                                            <li><span>Running time:</span>
-
+                                            <li>
+                                                <span>Running time: {movie.release_date} </span>
                                             </li>
-                                            <li><span>Country:</span>
+                                            <li><span>Country: </span>
 
                                             </li>
 
                                         </ul>
                                         <div className="card__description card__description--details">
-                                            Set in 1932 Los Angeles, the series focuses on the origin story of famed defense lawyer Perry Mason. Living check-to-check as a low-rent private investigator, Mason is haunted by his wartime experiences in France and suffering the effects of a broken marriage. L.A. is booming while the rest of the country recovers from the Great Depression — but a kidnapping gone very wrong leads to Mason exposing a fractured city as he uncovers the truth of the crime.
+                                            {movie.overview}
                                         </div>
                                     </div>
                                 </Col>

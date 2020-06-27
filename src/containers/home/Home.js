@@ -14,7 +14,7 @@ export default function Home() {
     
     useEffect(() => {
         const fetchHomeData = () =>{
-            axios.get('http://localhost:5000/')
+            axios.get('https://movie-palace-api.herokuapp.com/')
             .then(data =>{
                 setTimeout(() => {
                     setData(data.data);

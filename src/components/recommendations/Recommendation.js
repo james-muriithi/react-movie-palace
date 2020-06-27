@@ -1,28 +1,38 @@
 import React from 'react'
 
 
-import './Recommendation.css';
 import { Col } from 'reactstrap';
 import Card from '../recommendationCard/RecommendationCard';
+import Placeholder from '../../components/placeholder/Placeholder';
 
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css"; 
+import './Recommendation.css';
 
-export default function Recommendation() {
+export default function Recommendation({recommendations}) {
     const settings = {
         dots: false,
         infinite: false,
         speed: 500,
         slidesToShow: 6,
-        slidesToScroll: 4,
+        slidesToScroll: 2,
         initialSlide: 0,
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 6,
-                    slidesToScroll: 4,
+                    slidesToScroll: 2,
+                    infinite: false,
+                    dots: false,
+                }
+            },
+            {
+                breakpoint: 926,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 3,
                     infinite: false,
                     dots: false,
                 }
@@ -43,6 +53,26 @@ export default function Recommendation() {
             }
         ]
     };
+
+    const showRecommendationCards = (data) => {
+        return data.map((movie, index) => (
+            <Card className="movie-card" movie={movie} key={index} />
+        ));
+    }
+
+    const showLoadingCards = () => {
+        return (
+            <>
+                <Placeholder />
+                <Placeholder />
+                <Placeholder />
+                <Placeholder />
+                <Placeholder />
+                <Placeholder />
+            </>
+        );
+    }
+
     return (
         <Col xs="12">
             <Col xs="12">
@@ -52,11 +82,11 @@ export default function Recommendation() {
             </Col>
             <Slider
                 className="owl-theme"
+                style={{
+                    marginLeft : "0px"
+                }}
                 {...settings}> 
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {recommendations ? showRecommendationCards(recommendations) : showLoadingCards()}
             </Slider>
         </Col>
     )

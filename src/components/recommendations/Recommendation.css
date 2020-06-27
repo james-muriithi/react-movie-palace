@@ -61,3 +61,13 @@
         font-size: 32px;
     }
 }
+
+
+/* purgecss start ignore */
+
+.owl-theme .slick-list .slick-track {
+    float: left;
+}
+
+
+/* purgecss end ignore */
