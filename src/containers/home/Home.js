@@ -1,12 +1,53 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import {Container, Row} from 'reactstrap';
+import axios from 'axios';
 
 import './Home.css';
 
 import Card from '../../components/card/Card';
+import Placeholder from '../../components/placeholder/Placeholder';
 import Footer from '../../components/footer/Footer';
 
 export default function Home() {
+    const [ data, setData ] = useState([])
+    const [ isLoaded, setLoaded ] = useState(false)
+    
+    useEffect(() => {
+        const fetchHomeData = () =>{
+            axios.get('http://localhost:5000/')
+            .then(data =>{
+                setTimeout(() => {
+                    setData(data.data);
+                    setLoaded(true);
+                }, 1500);
+            })
+            
+        }
+
+        fetchHomeData();
+    }, [])
+
+    const showMovieCards = (data) => {
+        return data.map((movie, index) => (
+            <Card className="movie-card" movie={movie} key={index} />
+        ));
+    }
+
+    const showLoadingCards = () => {
+        return(
+            <>
+                <Placeholder />
+                <Placeholder />
+                <Placeholder />
+                <Placeholder />
+                <Placeholder />
+                <Placeholder />
+            </>
+        );
+    }
+
+
+
     return (
         <>
         <section className="home">
@@ -14,10 +55,7 @@ export default function Home() {
                 <div className="tab-content" id="myTabContent">
                     <div className="tab-pane fade show active">
                         <Row>
-                            <Card className="movie-card" />
-                            <Card className="movie-card" />
-                            <Card className="movie-card" />
-                            <Card className="movie-card" />
+                                {isLoaded ? showMovieCards(data) : showLoadingCards()}
                         </Row>
                     </div>
                 </div>

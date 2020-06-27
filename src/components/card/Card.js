@@ -3,12 +3,21 @@ import {Col, Row} from 'reactstrap';
 import Img from '../image/Image';
 import {Link} from 'gatsby';
 import { Fade } from "react-reveal";
+import PropTypes from "prop-types";
 
 import shareSvg from '../../images/share.svg';
 import Like from '../favourite/Like';
 import './Card.css';
+import placeholderSrc from '../../images/posterplaceholder_gm4xhm.jpg';
 
-export default function Card(props) {
+export default function Card({movie, ...props}) {
+    const ImageEndpoint = 'https://image.tmdb.org/t/p/w200'
+    const imageSrc = movie.backdrop_path ? `${ImageEndpoint}${movie.poster_path}` : placeholderSrc
+    const title = movie.title ? movie.title : movie.name;
+    let url = '/';
+    if (movie.media_type === 'movie') {
+        url = `movie/${movie.id}`
+    }
     return (
         <Col xs="6" lg="6" sm="12" {...props} >
             <Fade bottom duration={800} distance="20px">
@@ -16,22 +25,25 @@ export default function Card(props) {
                 <Row>
                     <Col sm="4" xs="12">
                         <div className="card__cover">
-                            <Img width="100%" image={{ src: 'https://image.tmdb.org/t/p/w200/ggFHVNu6YYI5L9pCfOacjizRGt.jpg'}} />
-                            <Link to="/movie" className="card__play" aria-label="check movie">
+                                <Img  
+                                    image={{ width:"150px", src: imageSrc}} />
+                                <Link to={url} state={{ title }} className="card__play" aria-label="check movie">
                                 <i className="icon ion-ios-play"></i>
                             </Link>
-                            <span className="card__rate card__rate--green">7.1</span>
+                                <span className="card__rate card__rate--green">{movie.vote_average}</span>
                         </div>
                     </Col>
                     <Col sm="8" xs="12" >
                         <div className="card__content">
-                            <Link to="/movie" className="d-flex align-items-center" >
+                                <Link to={url} state={{ title }} className="d-flex align-items-center" >
                                 <h3 className="card__title"> 
-                                    Movie Name
+                                    {title}
                                 </h3>
                             </Link>
                             <span className="card__category">
-                                <span>hello, hello, comedy</span>
+                                <span>
+                                    {movie.genre_ids.join(', ')}
+                                </span>
                             </span>
 
                             <div className="card__wrap">
@@ -48,9 +60,7 @@ export default function Card(props) {
                             
                             <div className="card__description">
                                 <p>
-                                    The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you
-                                    cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more:
-                                    https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+                                    {movie.overview}
                                 </p>
                             </div>
                         </div>
@@ -62,3 +72,6 @@ export default function Card(props) {
     )
 }
 
+Card.propTypes = {
+    movie: PropTypes.object.isRequired
+}

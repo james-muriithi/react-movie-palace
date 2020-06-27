@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Image = ({ image, scrollPosition, ...props }) => {
-    console.log(image);
     return(
     <LazyLoadImage
         {...props}
@@ -15,7 +14,7 @@ const Image = ({ image, scrollPosition, ...props }) => {
         className="gallery-img"
         scrollPosition={scrollPosition}
         effect='blur'
-        height={image.height ? image.height: 240}
+        height={image.height ? image.height: "240px"}
         placeholderSrc={'https://res.cloudinary.com/james-m/image/upload/c_thumb,h_240,w_180/v1593129344/party_va3kjs.jpg'}
         src={image.src}
         width={image.width}
