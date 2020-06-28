@@ -28,7 +28,7 @@ export default function Card(props) {
                 <Row>
                     <Col sm="4" xs="12">
                         <div className="card__cover">
-                            <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(255, 255, 2554, 0.1)" height={`${imageHeight}px`} style={{ width: "100%" }}>
+                            <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(0, 0, 0, 0.1)" height={`${imageHeight}px`} style={{ width: "100%" }}>
                                 <rect x="20" y="0" rx="5" ry="5" style={{ width: "100%" }} />
                             </ContentLoader>
                         </div>
@@ -37,7 +37,7 @@ export default function Card(props) {
                         <div className="card__content">
                             <Link to='#' className="d-flex align-items-center" >
                                 <h3 className="card__title">
-                                    <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(255, 255, 255, 0.1)" height="80px" style={{ width: "100%" }}>
+                                    <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(0, 0, 0, 0.1)" height="80px" style={{ width: "100%" }}>
                                         <rect x="0" y="0" rx="5" ry="5" style={{ height: "40px", width: "100%" }} />
                                     </ContentLoader>
                                 </h3>
@@ -51,11 +51,11 @@ export default function Card(props) {
                             <div className="card__wrap">
 
                                 <ul className="card__list">
-                                    {/* <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(255, 255, 255, 0.1)" height="30px" width="30px">
+                                    {/* <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(0, 0, 0, 0.1)" height="30px" width="30px">
                                         <circle cx="25" cy="15" r="15" />
                                     </ContentLoader>
 
-                                    <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(255, 255, 255, 0.1)" height="30px" width="30px">
+                                    <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(0, 0, 0, 0.1)" height="30px" width="30px">
                                         <circle cx="35" cy="15" r="15" />
                                     </ContentLoader> */}
                                 </ul>
@@ -63,7 +63,7 @@ export default function Card(props) {
 
                             <div className="card__description">
                                 <p>
-                                    <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(255, 255, 255, 0.1)" style={{ minHeight: '70px', width: '100%' }}>
+                                    <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(0, 0, 0, 0.1)" style={{ minHeight: '70px', width: '100%' }}>
                                         <rect x="0" y="0" rx="5" ry="5" width="250" height="10" style={{ width: "100%" }} />
                                         <rect x="0" y="25" rx="5" ry="5" width="250" height="10" style={{ width: "100%" }} />
                                         <rect x="0" y="50" rx="5" ry="5" width="250" height="10" style={{ width: "100%" }} />
