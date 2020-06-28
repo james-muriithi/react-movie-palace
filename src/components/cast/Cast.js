@@ -3,8 +3,9 @@ import { Col } from 'reactstrap'
 import Slider from 'react-slick'
 
 import CastCard from './CastCard'
+import Placeholder from '../../components/placeholder/Placeholder';
 
-export default function Cast() {
+export default function Cast({casts}) {
     const settings = {
         dots: false,
         infinite: false,
@@ -38,19 +39,71 @@ export default function Cast() {
     };
     return (
         <Col xs="12" xl="7">
-            <Col xs="12">
-                <h2 className="section__title fs-22">Movie Cast</h2>
-            </Col>
-            <Slider
-                className="owl-theme"
-                {...settings}
-            >
-                <CastCard />
-                <CastCard />
-                <CastCard />
-                <CastCard />
-                <CastCard />
-            </Slider>
+            {casts ? (
+                <>
+                    {casts.length && <Col xs="12">
+                        <h2 className="section__title fs-22">Movie Cast</h2>
+                    </Col>}
+                    <Slider
+                        className="owl-theme"
+                        {...settings}>
+                        {casts.map((cast, index) => (
+                            <CastCard cast={cast} key={index} />
+                        ))}
+                    </Slider>
+                </>
+            ) : (
+                    <>
+                        <Col xs="12">
+                            <h2 className="section__title fs-22">Movie Cast</h2>
+                        </Col>
+                        <Slider
+                            className="owl-theme"
+                            {...settings}
+                            slidesToShow={2}
+                            responsive={[
+                                {
+                                    breakpoint: 480,
+                                    settings: {
+                                        slidesToShow: 2,
+                                        slidesToScroll: 1
+                                    }
+                                }
+                            ]}>
+                            <Col xs="12" className="item">
+                                <div className="card">
+                                    <Placeholder />
+                                </div>
+                            </Col>
+                            <Col xs="12" className="item">
+                                <div className="card">
+                                    <Placeholder />
+                                </div>
+                            </Col>
+                            <Col xs="12" className="item">
+                                <div className="card">
+                                    <Placeholder />
+                                </div>
+                            </Col>
+                            <Col xs="12" className="item">
+                                <div className="card">
+                                    <Placeholder />
+                                </div>
+                            </Col>
+                            <Col xs="12" className="item">
+                                <div className="card">
+                                    <Placeholder />
+                                </div>
+                            </Col>
+                            <Col xs="12" className="item">
+                                <div className="card">
+                                    <Placeholder />
+                                </div>
+                            </Col>
+                        </Slider>
+                    </>
+                )}
+            
 
         </Col>
     )

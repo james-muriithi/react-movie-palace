@@ -103,36 +103,24 @@ export default function Recommendation({recommendations}) {
                             ]}
                             >
                             <Col xs="12" className="item">
-                                <div className="card">
-                                    <Placeholder />
-                                </div>
+                                <Placeholder />
                             </Col>
                             <Col xs="12" className="item">
-                                <div className="card">
-                                    <Placeholder />
-                                </div>
+                                <Placeholder />
                             </Col>
                             <Col xs="12" className="item">
-                                <div className="card">
-                                    <Placeholder />
-                                </div>
+                                <Placeholder />
                             </Col>
                             <Col xs="12" className="item">
-                                <div className="card">
-                                    <Placeholder />
-                                </div>
+                                <Placeholder />
                             </Col>
                             <Col xs="12" className="item">
-                                <div className="card">
-                                    <Placeholder />
-                                </div>
+                                <Placeholder />
                             </Col>
                             <Col xs="12" className="item">
-                                <div className="card">
-                                    <Placeholder />
-                                </div>
+                                <Placeholder />
                             </Col>
-
+                            
                         </Slider>
                     </div>
             )}

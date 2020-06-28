@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import axios from "axios";
 
 import MovieDetails from '../../components/movieDetails/MovieDetails';
+import MovieDetailsPlaceHolder from '../../components/movieDetails/MovieDetailsPlaceHolder';
 import Header from '../../components/singleMovieHeader/singleMovieHeader';
 import BigHeader from '../../components/header/Header';
 import Recommendation from '../../components/recommendations/Recommendation';
@@ -28,7 +29,6 @@ export default function SingleMovie(props) {
                         setLoaded(true);
                     }, 1000);
                 })
-
         }
         fetchMovieData();
 
@@ -45,11 +45,11 @@ export default function SingleMovie(props) {
         <>
             {small ? <Header title={isLoaded && movieData.data.title}  /> : <BigHeader /> }
             <section className="section details">
-                {isLoaded && <MovieDetails movie={movieData.data} />}
+                {isLoaded ? <MovieDetails movie={movieData.data} /> : <MovieDetailsPlaceHolder /> }
                 <Container>
                     <Row>
                         {<Recommendation recommendations={movieData.recommendations} />}
-                        {isLoaded && <Cast />}
+                        {<Cast casts={movieData.cast} />}
                         {isLoaded && <Trailer video={movieData.data.videos.results[0]} />}
                     </Row>
                 </Container>

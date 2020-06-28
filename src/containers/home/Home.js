@@ -5,7 +5,7 @@ import axios from 'axios';
 import './Home.css';
 
 import Card from '../../components/card/Card';
-import Placeholder from '../../components/placeholder/Placeholder';
+import Placeholder from '../../components/card/CardPlaceholder';
 import Footer from '../../components/footer/Footer';
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
                 setTimeout(() => {
                     setData(data.data);
                     setLoaded(true);
-                }, 1500);
+                }, 1000);
             })
             
         }

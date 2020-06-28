@@ -115,7 +115,7 @@ function MovieDetails({movie}) {
                                 </Col>
                                 <Col xs="12" sm="8" lg="9">
                                     <div className="card__content my-card">
-                                        <Col cs="12" className="p-l-0">
+                                        <Col xs="12" className="p-l-0">
                                             <h1 className="details__title">
                                                 {movie.title}
                                             </h1>
