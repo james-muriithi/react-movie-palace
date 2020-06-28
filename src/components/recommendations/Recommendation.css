@@ -69,5 +69,10 @@
     float: left;
 }
 
+.item:hover,
+.item:active {
+    outline: none;
+}
+
 
 /* purgecss end ignore */

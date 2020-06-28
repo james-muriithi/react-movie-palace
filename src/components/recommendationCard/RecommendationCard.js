@@ -10,7 +10,7 @@ import placeholderSrc from '../../images/posterplaceholder_gm4xhm.jpg';
 import "./RemocandationCard.css";
 
 export default function RecommendationCard({movie}) {
-    const ImageEndpoint = 'https://image.tmdb.org/t/p/w200'
+    const ImageEndpoint = 'https://image.tmdb.org/t/p/w154'
     const imageSrc = movie.backdrop_path ? `${ImageEndpoint}${movie.poster_path}` : placeholderSrc
 
     const url = `/movie/${movie.id}`

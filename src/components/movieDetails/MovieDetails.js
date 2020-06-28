@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import tinycolor from 'tinycolor2'
 
 import Img from '../image/Image';
+import SEO from '../seo/Seo';
 import shareSvg from '../../images/share.svg';
 import Like from '../favourite/Like';
 import placeholderSrc from '../../images/posterplaceholder_gm4xhm.jpg';
@@ -60,7 +61,6 @@ function MovieDetails({movie}) {
         // change meta theme
         if (colorArrays.length > 0) {
             const hex = tinycolor(rgb(colorArrays)).darken().toHexString();
-            console.log(hex);
             changeThemeColor(hex);
         }
         
@@ -87,16 +87,19 @@ function MovieDetails({movie}) {
         height: ${(props) => props.height}px;
         background: ${(props) => props.background};`
 
-        console.log(movie);
-
     return (
         <>
-                <BgDiv
-                    className="details__bg"
-                    data-bg=""
-                    height={height}
-                    background={`linear-gradient(to right top, ${gradientColors[ 0 ]} 10%,${gradientColors[ 0 ]} 30%, ${gradientColors[ 2 ]} 50%), url("${backdropSrc}") center center / cover no-repeat`}
-                ></BgDiv>
+            <SEO 
+            title={`${movie.title}-Movie Palace`} 
+            banner={movie.poster_path ? imageSrc : ''}
+            pathname={`/movie/${movie.id}`}
+            desc={movie.overview} />
+            <BgDiv
+                className="details__bg"
+                data-bg=""
+                height={height}
+                background={`linear-gradient(to right top, ${gradientColors[ 0 ]} 10%,${gradientColors[ 0 ]} 30%, ${gradientColors[ 2 ]} 50%), url("${backdropSrc}") center center / cover no-repeat`}
+            />
             <Container>
                 <Row>
                     <Col xl="12" >
@@ -132,17 +135,20 @@ function MovieDetails({movie}) {
                                         <ul className="card__meta">
                                             <li className="genre">
                                                 <span>Genre:</span>
-                                                {movie.genres.join(', ')}
+                                                {movie.genres && movie.genres.join(', ')}
                                             </li>
                                             <li>
-                                                <span>Release date: {movie.release_date}</span>
+                                                <span>Release date: </span>
+                                                {movie.release_date}
                                             </li>
                                             <li>
-                                                <span>Running time: {movie.release_date} </span>
+                                                <span>Running time: </span>
+                                                {movie.release_date}
                                             </li>
-                                            <li><span>Country: </span>
-
-                                            </li>
+                                            {movie.production_countries && <li>
+                                                <span>Country: </span>
+                                                {movie.production_countries.join(', ')}
+                                            </li>}
 
                                         </ul>
                                         <div className="card__description card__description--details">

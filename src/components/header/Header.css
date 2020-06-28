@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     background-color: #2b2b31;
-    z-index: 101;
+    z-index: 10000;
 }
 
 .header__logo {

@@ -23,8 +23,10 @@ export default function SingleMovie(props) {
         const fetchMovieData = () => {
             axios.get(`https://movie-palace-api.herokuapp.com/movie/${props.movieId}`)
                 .then(data => {
-                    setMovieData(data.data);
-                    setLoaded(true);
+                    setTimeout(() => {
+                        setMovieData(data.data);
+                        setLoaded(true);
+                    }, 1000);
                 })
 
         }

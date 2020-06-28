@@ -1,7 +1,6 @@
 import React from 'react';
 
 import SingleMovie from '../containers/singleMovie/SingleMovie';
-import SEO from '../components/seo/Seo';
 import Layout from '../containers/layout/Layout';
 
 export default function Movie(props) {
@@ -21,7 +20,6 @@ export default function Movie(props) {
     
     return (
         <Layout>
-            <SEO title="Perry Mason - Movie Palace" />
             <SingleMovie movieId={getMovieId()} />
         </Layout>
     )

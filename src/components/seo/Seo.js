@@ -15,7 +15,6 @@ import Twitter from "./Twitter"
 
 const SEO = ({ title, desc, banner, pathname, article, node }) => {
   const { site } = useStaticQuery(query)
-
   const {
     buildTime,
     siteMetadata: {
@@ -35,7 +34,7 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
   const seo = {
     title: title || defaultTitle,
     description: desc || defaultDescription,
-    image: `${siteUrl}${banner || defaultBanner}`,
+    image: banner || `${siteUrl}${defaultBanner}`,
     url: `${siteUrl}${pathname || ''}`,
   }
 

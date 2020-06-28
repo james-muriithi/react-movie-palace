@@ -60,34 +60,82 @@ export default function Recommendation({recommendations}) {
         ));
     }
 
-    const showLoadingCards = () => {
-        return (
-            <>
-                <Placeholder />
-                <Placeholder />
-                <Placeholder />
-                <Placeholder />
-                <Placeholder />
-                <Placeholder />
-            </>
-        );
-    }
-
     return (
         <Col xs="12">
-            <Col xs="12">
-                <h2 className="section__title">
-                    Recommended
-                </h2>
-            </Col>
-            <Slider
-                className="owl-theme"
-                style={{
-                    marginLeft : "0px"
-                }}
-                {...settings}> 
-                {recommendations ? showRecommendationCards(recommendations) : showLoadingCards()}
-            </Slider>
+            {recommendations ? (
+                <div>
+                    <Col xs="12">
+                        {recommendations.length && <h2 className="section__title">
+                            Recommended
+                        </h2>}
+                    </Col>
+                    <Slider
+                        className="owl-theme"
+                        style={{
+                            marginLeft: "0px"
+                        }}
+                        {...settings}>
+                        {showRecommendationCards(recommendations)}
+                    </Slider>
+                </div>
+            ) : (
+                    <div>
+                        <Col xs="12">
+                            <h2 className="section__title">
+                                Recommended
+                            </h2>
+                        </Col>
+                        <Slider
+                            className="owl-theme"
+                            style={{
+                                marginLeft: "0px"
+                            }}
+                            {...settings}
+                            slidesToShow={3}
+                            responsive={[
+                                {
+                                    breakpoint: 480,
+                                    settings: {
+                                        slidesToShow: 2,
+                                        slidesToScroll: 2
+                                    }
+                                }
+                            ]}
+                            >
+                            <Col xs="12" className="item">
+                                <div className="card">
+                                    <Placeholder />
+                                </div>
+                            </Col>
+                            <Col xs="12" className="item">
+                                <div className="card">
+                                    <Placeholder />
+                                </div>
+                            </Col>
+                            <Col xs="12" className="item">
+                                <div className="card">
+                                    <Placeholder />
+                                </div>
+                            </Col>
+                            <Col xs="12" className="item">
+                                <div className="card">
+                                    <Placeholder />
+                                </div>
+                            </Col>
+                            <Col xs="12" className="item">
+                                <div className="card">
+                                    <Placeholder />
+                                </div>
+                            </Col>
+                            <Col xs="12" className="item">
+                                <div className="card">
+                                    <Placeholder />
+                                </div>
+                            </Col>
+
+                        </Slider>
+                    </div>
+            )}
         </Col>
     )
 }
