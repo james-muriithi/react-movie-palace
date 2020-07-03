@@ -37,7 +37,7 @@ function MovieDetailsPlaceHolder() {
                             <Row>
                                 <Col xs="12" sm="4" lg="3" className="imageDiv" >
                                     <div className="card__cover my-card" >
-                                        <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(0, 0, 0, 0.1)" height={`${imageHeight}px`} style={{ width: "100%" }}>
+                                        <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(255, 255, 255, 0.1)" height={`${imageHeight}px`} style={{ width: "100%" }}>
                                             <rect x="20" y="0" rx="5" ry="5" style={{ width: "100%" }} />
                                         </ContentLoader>
                                         <span className="rd__rate--green"></span>
@@ -47,22 +47,22 @@ function MovieDetailsPlaceHolder() {
                                     <div className="card__content my-card">
                                         <Col xs="12" className="p-l-0">
                                             <h1 className="details__title">
-                                                <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(0, 0, 0, 0.1)" height="80px" style={{ width: "100%" }}>
+                                                <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(255, 255, 255, 0.1)" height="80px" style={{ width: "100%" }}>
                                                     <rect x="0" y="0" rx="5" ry="5" style={{ height:"40px", width: "100%" }} />
                                                 </ContentLoader>
                                             </h1>
                                         </Col>
                                         <div className="card__wrap">
                                             <ul className="card__list single">
-                                                <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(0, 0, 0, 0.1)" height="70px" width="70px">
+                                                <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(255, 255, 255, 0.1)" height="70px" width="70px">
                                                     <circle cx="25" cy="25" r="25" />
                                                 </ContentLoader>
 
-                                                <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(0, 0, 0, 0.1)" height="70px" width="70px">
+                                                <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(255, 255, 255, 0.1)" height="70px" width="70px">
                                                     <circle cx="25" cy="25" r="25" />
                                                 </ContentLoader>
 
-                                                <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(0, 0, 0, 0.1)" height="70px" width="70px">
+                                                <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(255, 255, 255, 0.1)" height="70px" width="70px">
                                                     <circle cx="25" cy="25" r="25" />
                                                 </ContentLoader>
                                             </ul>
@@ -72,7 +72,7 @@ function MovieDetailsPlaceHolder() {
 
                                         </ul>
                                         <div className="card__description card__description--details">
-                                            <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(0, 0, 0, 0.1)" style={{minHeight: '70px', width: '100%'}}>
+                                            <ContentLoader speed={2} backgroundColor="transparent" foregroundColor="rgba(255, 255, 255, 0.1)" style={{minHeight: '70px', width: '100%'}}>
                                                 <rect x="0" y="0" rx="5" ry="5" width="250" height="10" style={{ width: "100%" }} />
                                                 <rect x="0" y="25" rx="5" ry="5" width="250" height="10" style={{ width: "100%" }} />
                                                 <rect x="0" y="50" rx="5" ry="5" width="250" height="10" style={{ width: "100%" }} />

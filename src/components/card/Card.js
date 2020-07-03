@@ -16,7 +16,7 @@ export default function Card({movie, ...props}) {
     const title = movie.title ? movie.title : movie.name;
     let url = '/';
     if (movie.media_type === 'movie') {
-        url = `movie/${movie.id}`
+        url = `movie/?m=${movie.id}`
     }
     return (
         <Col xs="6" lg="6" sm="12" {...props} >

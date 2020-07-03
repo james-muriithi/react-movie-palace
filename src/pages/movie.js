@@ -2,16 +2,18 @@ import React from 'react';
 
 import SingleMovie from '../containers/singleMovie/SingleMovie';
 import Layout from '../containers/layout/Layout';
+import withLocation from "../components/withLocation"
+import SEO from '../components/seo/Seo';
 
-export default function Movie(props) {
+function Movie({search}) {
     const globalWindow = typeof window !== 'undefined' && window;
     
 
     const getMovieId = () => {
-        const location = props.location;
-        const movieId = location && location.pathname.split('/')[ 2 ]
-        if (movieId) {
-            return movieId;
+        const {m} = search
+        if (m) {
+            console.log(m);
+            return m;
         }
         if (globalWindow.location) {
             globalWindow.location.href = '/';
@@ -20,7 +22,10 @@ export default function Movie(props) {
     
     return (
         <Layout>
+            <SEO />
             <SingleMovie movieId={getMovieId()} />
         </Layout>
     )
 }
+
+export default withLocation(Movie);

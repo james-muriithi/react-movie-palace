@@ -27,12 +27,10 @@ self.addEventListener("fetch", function(e) {
         // Setting {cache: 'reload'} in the new request will ensure that the response
         // isn't fulfilled from the HTTP cache; i.e., it will be from the network.
         await cache.addAll([
+            "/",
             "/offline.html",
-            "/movies/offline.html",
-            "/movie/offline.html",
-            "/tv/offline.html",
-            "/tv-shows/offline.html",
-            "/search/offline.html"
+            "/movie",
+            "/404"
         ]);
     })()), console.log("Latest version installed!")
 });
