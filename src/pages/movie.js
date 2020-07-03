@@ -2,7 +2,7 @@ import React from 'react';
 
 import SingleMovie from '../containers/singleMovie/SingleMovie';
 import Layout from '../containers/layout/Layout';
-import withLocation from "../components/withLocation"
+import withLocation from "../components/WithLocation";
 import SEO from '../components/seo/Seo';
 
 function Movie({search}) {
